@@ -153,7 +153,8 @@ PlayerSettings:
   resetResolutionOnWindowResize: 0
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
-  applicationIdentifier: {}
+  applicationIdentifier:
+    Standalone: com.DefaultCompany.Prototype-1-Fairy-Land
   buildNumber:
     Standalone: 0
     VisionOS: 0
@@ -896,8 +897,8 @@ PlayerSettings:
   apiCompatibilityLevelPerPlatform: {}
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
-  metroPackageName: Prototype 1-Fairy Land
-  metroPackageVersion: 
+  metroPackageName: Prototype1-FairyLand
+  metroPackageVersion: 1.0.0.0
   metroCertificatePath: 
   metroCertificatePassword: 
   metroCertificateSubject: 
@@ -905,7 +906,7 @@ PlayerSettings:
   metroCertificateNotAfter: 0000000000000000
   metroApplicationDescription: Prototype 1-Fairy Land
   wsaImages: {}
-  metroTileShortName: 
+  metroTileShortName: Prototype 1-Fairy Land
   metroTileShowName: 0
   metroMediumTileShowName: 0
   metroLargeTileShowName: 0
