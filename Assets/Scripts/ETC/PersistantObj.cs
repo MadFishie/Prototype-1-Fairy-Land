@@ -1,18 +1,24 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PersistantObj : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public static PersistantObj Current;
+
+
+    private void Start()
     {
-        
+        if (Current != null) 
+        {
+            return;
+        }
+        else 
+        {
+            Current = this;
+            DontDestroyOnLoad(this);
+        }
+
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
+
 }
