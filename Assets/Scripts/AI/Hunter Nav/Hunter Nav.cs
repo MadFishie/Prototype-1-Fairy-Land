@@ -9,7 +9,7 @@ public class HunterNav : MonoBehaviour
     [SerializeField] private GameObject NavPoints;
     private List<Transform> NavPointList=new List<Transform>();
     private int NavPointCount;
-    private bool Hunting;
+    private bool Hunting = false;
     [SerializeField] private Transform player;
     private NavMeshAgent agent;
 
@@ -17,6 +17,7 @@ public class HunterNav : MonoBehaviour
     void Start()
     {
 
+        agent = GetComponent<NavMeshAgent>();
         NavPointCount = NavPoints.transform.childCount;
         //Debug.Log(NavPointCount);
         //var navItems = NavPoints.GetComponentInChildren<Transform>();
