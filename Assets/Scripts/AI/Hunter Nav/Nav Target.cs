@@ -12,6 +12,7 @@ public class NavTarget : MonoBehaviour
         {
 
             TargetReached = true;
+            Debug.Log("Target reset");
 
         }
     }

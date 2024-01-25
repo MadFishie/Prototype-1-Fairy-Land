@@ -50,6 +50,7 @@ public class HunterNav : MonoBehaviour
 
             agent.destination = NavPointList[Random.Range(0, NavPointCount)].position;
             NavTarget.TargetReached = false;
+            Debug.Log("new target found");
 
         }
         if (Hunting==true)
