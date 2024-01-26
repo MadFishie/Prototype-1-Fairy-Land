@@ -19,11 +19,12 @@ public class HunterNav : MonoBehaviour
 
         agent = GetComponent<NavMeshAgent>();
         NavPointCount = NavPoints.transform.childCount;
+        NavTarget.TargetReached = false;
         //Debug.Log(NavPointCount);
         //var navItems = NavPoints.GetComponentInChildren<Transform>();
         //NavPointList = navItems;
-        
-       foreach (Transform child in NavPoints.transform)
+
+        foreach (Transform child in NavPoints.transform)
         {
             Debug.Log(child);
             NavPointList.Add(child);
