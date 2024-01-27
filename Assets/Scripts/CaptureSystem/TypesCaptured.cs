@@ -13,18 +13,32 @@ public class TypesCaptured : MonoBehaviour
 
     private void Awake()
     {
-        foreach(var item in FairyAI.GrabAllFariesInScene()) 
-        {
-            item.SendType += GrabElement;
-        
-        }
+        current = this;
+        AddFaries();
     }
+
+   
 
     private void OnDisable()
     {
+        SubFaries();
+    }
+
+    public static void AddFaries()
+    {
         foreach (var item in FairyAI.GrabAllFariesInScene())
         {
-            item.SendType -= GrabElement;
+            item.SendType +=current.GrabElement;
+
+        }
+    }
+
+
+    public static void SubFaries()
+    {
+        foreach (var item in FairyAI.GrabAllFariesInScene())
+        {
+            item.SendType -= current.GrabElement;
 
         }
     }

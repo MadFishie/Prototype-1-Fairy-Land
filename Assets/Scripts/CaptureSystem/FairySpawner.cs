@@ -10,11 +10,10 @@ public class FairySpawner : MonoBehaviour
     
 
 
-    private void OnEnable()
+    private void Awake()
     {
-
-
-
+        if(FairyPrefab == null) { Debug.LogWarning("You forgot to set prefab on spawner hobo "+this); return; }
+        TypesCaptured.SubFaries();
         for (int i = 0; i <= AmountSpawn; i++) 
         {
             var Spawnpoint = transform.GetChild(Random.Range(0, transform.childCount));
@@ -24,7 +23,7 @@ public class FairySpawner : MonoBehaviour
 
             fairy.GetComponent<FairyAI>().ChangeElement(elementSpawn);
         }
-
+        TypesCaptured.AddFaries();
     }
 
 
