@@ -401,11 +401,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &363514517 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1712683374117755721, guid: 968f669c09f050a4983b9e8cce293f5a, type: 3}
-  m_PrefabInstance: {fileID: 780295143699102645}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &831060655
 GameObject:
   m_ObjectHideFlags: 0
@@ -592,63 +587,6 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 0
---- !u!1001 &780295143699102645
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1712683374117755721, guid: 968f669c09f050a4983b9e8cce293f5a, type: 3}
-      propertyPath: m_Name
-      value: Fairy
-      objectReference: {fileID: 0}
-    - target: {fileID: 1881943641407389107, guid: 968f669c09f050a4983b9e8cce293f5a, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -4.43
-      objectReference: {fileID: 0}
-    - target: {fileID: 1881943641407389107, guid: 968f669c09f050a4983b9e8cce293f5a, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1881943641407389107, guid: 968f669c09f050a4983b9e8cce293f5a, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 24.128
-      objectReference: {fileID: 0}
-    - target: {fileID: 1881943641407389107, guid: 968f669c09f050a4983b9e8cce293f5a, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1881943641407389107, guid: 968f669c09f050a4983b9e8cce293f5a, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1881943641407389107, guid: 968f669c09f050a4983b9e8cce293f5a, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1881943641407389107, guid: 968f669c09f050a4983b9e8cce293f5a, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1881943641407389107, guid: 968f669c09f050a4983b9e8cce293f5a, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1881943641407389107, guid: 968f669c09f050a4983b9e8cce293f5a, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1881943641407389107, guid: 968f669c09f050a4983b9e8cce293f5a, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 968f669c09f050a4983b9e8cce293f5a, type: 3}
 --- !u!1001 &894742279774352832
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -661,6 +599,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FairySpawner
       objectReference: {fileID: 0}
+    - target: {fileID: 181364671451444840, guid: 17f476eaf2408294ba75f4fe3be0edf6, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1311950371679981866, guid: 17f476eaf2408294ba75f4fe3be0edf6, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -701,14 +643,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3894603991852913325, guid: 17f476eaf2408294ba75f4fe3be0edf6, type: 3}
-      propertyPath: AmountSpawn
-      value: 13
-      objectReference: {fileID: 0}
-    - target: {fileID: 3894603991852913325, guid: 17f476eaf2408294ba75f4fe3be0edf6, type: 3}
-      propertyPath: FairyPrefab
-      value: 
-      objectReference: {fileID: 363514517}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -899,7 +833,6 @@ SceneRoots:
   - {fileID: 158638856}
   - {fileID: 132189710}
   - {fileID: 7151094947638676903}
-  - {fileID: 780295143699102645}
   - {fileID: 1599768644823754878}
   - {fileID: 182571153}
   - {fileID: 894742279774352832}

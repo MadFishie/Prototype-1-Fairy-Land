@@ -48,8 +48,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   elementSpawn: 0
-  AmountSpawn: 0
-  FairyPrefab: {fileID: 0}
+  AmountSpawn: 20
+  FairyPrefab: {fileID: 1712683374117755721, guid: 968f669c09f050a4983b9e8cce293f5a, type: 3}
 --- !u!1 &1159321334573008506
 GameObject:
   m_ObjectHideFlags: 0

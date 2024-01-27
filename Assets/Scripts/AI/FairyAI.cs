@@ -33,9 +33,6 @@ public class FairyAI : MonoBehaviour
     private float timer;
 
 
-
-
-
     private void Start()
     {
         agent = GetComponent<NavMeshAgent>();
