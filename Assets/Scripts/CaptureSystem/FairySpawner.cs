@@ -19,7 +19,7 @@ public class FairySpawner : MonoBehaviour
             var Spawnpoint = transform.GetChild(Random.Range(0, transform.childCount));
 
 
-            GameObject fairy=Instantiate(FairyPrefab,Spawnpoint,Spawnpoint)as GameObject;
+            GameObject fairy = Instantiate(FairyPrefab, Spawnpoint.transform.position,Spawnpoint.rotation,Spawnpoint)as GameObject;
 
             fairy.GetComponent<FairyAI>().ChangeElement(elementSpawn);
         }

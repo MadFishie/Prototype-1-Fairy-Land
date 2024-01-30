@@ -6,7 +6,7 @@ using System;
 public class TypesCaptured : MonoBehaviour
 {
 
-    static int GrassGrab, SnowGrab, CandyGrab, DarkGrab;
+    static public int GrassGrab, SnowGrab, CandyGrab, DarkGrab;
     [SerializeField][Range(0,100)]static int MaxCapNum = 5;
     public static TypesCaptured current;
 
