@@ -26,14 +26,17 @@ public class SceneLoader : MonoBehaviour
     
     
 
-    public static void loadScenebyName(float delay,string name)
+    public static void loadScenebyName(string name)
     {
-        if (current.loading == false) { current.StartCoroutine(current.LoadSceneByName(delay, name)); }
+        if (current.loading == false) { current.StartCoroutine(current.LoadSceneByName(0.5f, name)); }
         
     }
 
 
-  
+    public static void QuitGame() 
+    {
+        Application.Quit();
+    }
 
 
 
