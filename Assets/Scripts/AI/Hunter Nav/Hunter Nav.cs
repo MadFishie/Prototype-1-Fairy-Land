@@ -5,13 +5,16 @@ using UnityEngine.AI;
 
 public class HunterNav : MonoBehaviour
 {
-    // Start is called before the first frame update
     [SerializeField] private GameObject NavPoints;
     private List<Transform> NavPointList=new List<Transform>();
     private int NavPointCount;
-    private bool Hunting = false;
+    public static bool Hunting = false;
     [SerializeField] private Transform player;
     private NavMeshAgent agent;
+    private Transform NavPoint;
+    private NavMeshPath checkPath;
+    private Transform LastPoint;
+
 
 
     void Start()
@@ -20,38 +23,40 @@ public class HunterNav : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         NavPointCount = NavPoints.transform.childCount;
         NavTarget.TargetReached = false;
-        //Debug.Log(NavPointCount);
-        //var navItems = NavPoints.GetComponentInChildren<Transform>();
-        //NavPointList = navItems;
+        
 
         foreach (Transform child in NavPoints.transform)
         {
             Debug.Log(child);
             NavPointList.Add(child);
             Debug.Log("point added");
-        }
-        
-        /*for (int i = 0; i < NavPointCount; i++)
-        {
-            //Debug.Log(i);
-            Debug.Log(NavPoints.transform.GetChild(i));
-            NavPointList.Add(NavPoints.transform.GetChild(i));
-            Debug.Log("Child added");
-
-        }*/
+        }   
         
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        checkPath = new NavMeshPath();
         if (NavTarget.TargetReached==true&&Hunting==false)
         {
 
-            agent.destination = NavPointList[Random.Range(0, NavPointCount)].position;
-            NavTarget.TargetReached = false;
-            Debug.Log("new target found");
+            NavPoint = NavPointList[Random.Range(0, NavPointCount)];
+            if (NavPoint != LastPoint)
+            {
+
+                if (agent.CalculatePath(NavPoint.position, checkPath))
+                {
+                    agent.destination = NavPoint.position;
+                    NavTarget.TargetReached = false;
+                    Debug.Log("New target found");
+                    LastPoint = NavPoint;
+                }
+                else { Debug.Log("Target unreachable"); }
+
+            }           
+            else { Debug.Log("Repeat target"); }
+
 
         }
         if (Hunting==true)
@@ -63,11 +68,26 @@ public class HunterNav : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Hunting = true;
+        if (other.CompareTag("Player"))
+        {
+
+            Hunting = true;
+            Debug.Log("Hunting");
+
+        }
+        
     }
     private void OnTriggerExit(Collider other)
     {
-        Hunting = false;
-        NavTarget.TargetReached = true;
+
+        if (other.CompareTag("Player"))
+        {
+
+            Hunting = false;
+            NavTarget.TargetReached = true;
+            Debug.Log("Hunting ended");
+
+        }
+        
     }
 }
