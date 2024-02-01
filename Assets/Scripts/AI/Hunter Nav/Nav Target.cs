@@ -8,9 +8,10 @@ public class NavTarget : MonoBehaviour
     public static bool TargetReached;
     private void OnTriggerEnter(Collider other)
     {
+        /*
         TargetReached = true;
         Debug.Log("Target reset");
-        /*
+        */
         if (other.CompareTag("Hunter"))
         {
 
@@ -18,6 +19,6 @@ public class NavTarget : MonoBehaviour
             Debug.Log("Target reset");
 
         }
-        */
+        
     }
 }
