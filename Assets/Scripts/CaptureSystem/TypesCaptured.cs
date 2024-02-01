@@ -10,6 +10,10 @@ public class TypesCaptured : MonoBehaviour
     [SerializeField][Range(0,100)]static int MaxCapNum = 5;
     public static TypesCaptured current;
 
+    [SerializeField] GameObject[] Walls;
+
+
+
 
     private void Awake()
     {
@@ -83,6 +87,12 @@ public class TypesCaptured : MonoBehaviour
                 Debug.Log("Captured" + ElementCapture.ToString() + GrassGrab);
                 break;
             
+
+        }
+        if (isRegionUnlocked(ElementCapture)) 
+        {
+            if (((int)ElementCapture) == 3) { Debug.Log("Win"); }
+            Walls[((int)ElementCapture)].SetActive(false);
 
         }
 

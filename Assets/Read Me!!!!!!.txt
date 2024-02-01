@@ -1,17 +1,10 @@
-walls drop
+
 hunter implemnted
-audio added
-	background
-	hunting
-	fairy thwack
-	footsteps?
 repawn/healthcount script
 finish map
 	reskin pink
 	paint texture
 	bild ruins
 	detail grass
-map bordars
+
 player HUD
-change fairy trails for type
-add gnomes
