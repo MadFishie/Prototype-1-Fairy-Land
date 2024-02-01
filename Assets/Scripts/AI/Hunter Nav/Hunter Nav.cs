@@ -14,6 +14,7 @@ public class HunterNav : MonoBehaviour
     private Transform NavPoint;
     private NavMeshPath checkPath;
     private Transform LastPoint;
+    [SerializeField] Animator WolfAnimator;
 
 
 
@@ -73,6 +74,7 @@ public class HunterNav : MonoBehaviour
 
             Hunting = true;
             Debug.Log("Hunting");
+            WolfAnimator.SetTrigger("Hunting");
 
         }
         
@@ -86,6 +88,7 @@ public class HunterNav : MonoBehaviour
             Hunting = false;
             NavTarget.TargetReached = true;
             Debug.Log("Hunting ended");
+            WolfAnimator.SetTrigger("NotHunting");
 
         }
         
