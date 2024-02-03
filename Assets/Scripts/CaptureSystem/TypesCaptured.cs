@@ -91,7 +91,7 @@ public class TypesCaptured : MonoBehaviour
         }
         if (isRegionUnlocked(ElementCapture)) 
         {
-            if (((int)ElementCapture) == 3) { Debug.Log("Win"); }
+            if (((int)ElementCapture) == 3) { SceneLoader.loadScenebyName("VictoryScreen"); }
             Walls[((int)ElementCapture)].SetActive(false);
 
         }

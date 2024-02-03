@@ -7,14 +7,23 @@ public class PersistantObj : MonoBehaviour
 
     private void Start()
     {
-        if (Current != null) 
-        {
-            return;
-        }
-        else 
+        if (Current == null) 
         {
             Current = this;
             DontDestroyOnLoad(this);
+        }
+        
+        else if (Current != this)
+        {
+            
+            
+                Destroy(Current.gameObject);
+            
+            
+            
+
+
+           
         }
 
     }

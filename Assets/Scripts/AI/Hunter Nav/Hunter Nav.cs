@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class HunterNav : MonoBehaviour
+public class HunterNav :AudioWrapper
 {
     [SerializeField] private GameObject NavPoints;
     private List<Transform> NavPointList=new List<Transform>();
@@ -15,7 +15,8 @@ public class HunterNav : MonoBehaviour
     private NavMeshPath checkPath;
     private Transform LastPoint;
     [SerializeField] Animator WolfAnimator;
-
+    [SerializeField] AudioClip HeartBeat,HuntEnded;
+    [SerializeField][Range(0, 1)] float HeartBeatVol = 0.3f;
 
 
     void Start()
@@ -71,9 +72,10 @@ public class HunterNav : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-
+            if (!Hunting) { SwapOutAudio(HeartBeat,HeartBeatVol); }
             Hunting = true;
             Debug.Log("Hunting");
+          
             WolfAnimator.SetTrigger("Hunting");
 
         }
@@ -84,7 +86,7 @@ public class HunterNav : MonoBehaviour
 
         if (other.CompareTag("Player"))
         {
-
+            if (Hunting) { SwapOutAudio(HuntEnded, 0.124f); }
             Hunting = false;
             NavTarget.TargetReached = true;
             Debug.Log("Hunting ended");

@@ -619,7 +619,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   NavPoints: {fileID: 4492679149484228551}
   player: {fileID: 0}
-  WolfAnimator: {fileID: 0}
+  WolfAnimator: {fileID: 7763835413973502519}
 --- !u!136 &7144641816741167458
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1216,6 +1216,11 @@ Transform:
 --- !u!4 &7454139373114906155 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5148516240987868593, guid: 4bbd87a5c12e92748ab033feeaee5e85, type: 3}
+  m_PrefabInstance: {fileID: 2306221766821616538}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &7763835413973502519 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5458353225504657837, guid: 4bbd87a5c12e92748ab033feeaee5e85, type: 3}
   m_PrefabInstance: {fileID: 2306221766821616538}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &7798471937515326609 stripped

@@ -3,21 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-[RequireComponent(typeof(Text))]
+
 public class TextUpdate : MonoBehaviour
 {
 
-    Text UpdateText;
+    [SerializeField]Text Grass,Dark,Candy,Snow;
 
-    private void Start()
-    {
-        UpdateText = GetComponent<Text>();
-    }
-
+  
     private void Update()
     {
-        UpdateText.text=TypesCaptured.GrassGrab.ToString();
+        Grass.text=TypesCaptured.GrassGrab.ToString();
+        Dark.text = TypesCaptured.DarkGrab.ToString();
+        Candy.text = TypesCaptured.CandyGrab.ToString();
+        Snow.text = TypesCaptured.SnowGrab.ToString();
     }
 
 
 }
+    
