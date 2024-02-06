@@ -17,6 +17,8 @@ public class HunterNav :AudioWrapper
     [SerializeField] Animator WolfAnimator;
     [SerializeField] AudioClip HeartBeat,HuntEnded;
     [SerializeField][Range(0, 1)] float HeartBeatVol = 0.3f;
+    [SerializeField] private float MovmentSpeed;
+    [SerializeField] private float HuntingSpeed;
 
 
     void Start()
@@ -25,7 +27,8 @@ public class HunterNav :AudioWrapper
         agent = GetComponent<NavMeshAgent>();
         NavPointCount = NavPoints.transform.childCount;
         NavTarget.TargetReached = false;
-        
+        agent.speed = MovmentSpeed;
+
 
         foreach (Transform child in NavPoints.transform)
         {
@@ -64,6 +67,7 @@ public class HunterNav :AudioWrapper
         if (Hunting==true)
         {
             agent.destination = player.position;
+
         }
 
     }
@@ -77,6 +81,7 @@ public class HunterNav :AudioWrapper
             Debug.Log("Hunting");
           
             WolfAnimator.SetTrigger("Hunting");
+            agent.speed = HuntingSpeed;
 
         }
         
@@ -91,6 +96,7 @@ public class HunterNav :AudioWrapper
             NavTarget.TargetReached = true;
             Debug.Log("Hunting ended");
             WolfAnimator.SetTrigger("NotHunting");
+            agent.speed = HuntingSpeed;
 
         }
         
