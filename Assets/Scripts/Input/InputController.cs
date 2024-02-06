@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using StarterAssets;
 
@@ -20,14 +19,16 @@ public class InputController : MonoBehaviour
             var move = GetComponent<FirstPersonController>();
             move.enabled = !move.enabled;
             paused = !paused;
-            Cursor.visible = !Cursor.visible;
+           
             if (paused) 
             {
                 Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
             }
             else 
             {
                 Cursor.lockState = CursorLockMode.Locked;
+                Cursor.visible = false;
             }
 
 

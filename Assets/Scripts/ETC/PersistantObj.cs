@@ -2,31 +2,25 @@ using UnityEngine;
 
 public class PersistantObj : MonoBehaviour
 {
-    public static PersistantObj Current;
+    public static GameObject Current;
+    [SerializeField]GameObject Persistant;
 
 
-    private void Start()
+    private void Awake()
     {
-        if (Current == null) 
+       if (Current == null) 
         {
-            Current = this;
-            DontDestroyOnLoad(this);
+            var Object=Instantiate(Persistant, Vector3.zero, gameObject.transform.rotation)as GameObject;
+            DontDestroyOnLoad(Object);
+            Current = Object;
+            
         }
-        
-        else if (Current != this)
-        {
-            
-            
-                Destroy(Current.gameObject);
-            
-            
-            
+      
 
-
-           
-        }
 
     }
+
+
 
 
 

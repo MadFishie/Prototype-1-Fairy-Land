@@ -30,21 +30,35 @@ public class TypesCaptured : MonoBehaviour
 
     public static void AddFaries()
     {
-        foreach (var item in FairyAI.GrabAllFariesInScene())
+        try 
         {
-            item.SendType +=current.GrabElement;
+            foreach (var item in FairyAI.GrabAllFariesInScene())
+            {
+
+                item.SendType += current.GrabElement;
+
+            }
 
         }
+        catch { }
+       
     }
 
 
     public static void SubFaries()
     {
-        foreach (var item in FairyAI.GrabAllFariesInScene())
+        try 
         {
-            item.SendType -= current.GrabElement;
+            foreach (var item in FairyAI.GrabAllFariesInScene())
+            {
+                item.SendType -= current.GrabElement;
+
+            }
+
 
         }
+        catch { }
+      
     }
 
     public static bool isRegionUnlocked(ElementTyping.Element element) 
@@ -91,7 +105,7 @@ public class TypesCaptured : MonoBehaviour
         }
         if (isRegionUnlocked(ElementCapture)) 
         {
-            if (((int)ElementCapture) == 3) { SceneLoader.loadScenebyName("VictoryScreen"); }
+            if (((int)ElementCapture) == 1) { SceneLoader.loadScenebyName("VictoryScreen"); }
             Walls[((int)ElementCapture)].SetActive(false);
 
         }

@@ -7,14 +7,12 @@ using UnityEngine.UI;
 public class TextUpdate : MonoBehaviour
 {
 
-    [SerializeField]Text Grass,Dark,Candy,Snow;
+    [SerializeField]Text Grass,Snow;
 
   
     private void Update()
     {
         Grass.text=TypesCaptured.GrassGrab.ToString();
-        Dark.text = TypesCaptured.DarkGrab.ToString();
-        Candy.text = TypesCaptured.CandyGrab.ToString();
         Snow.text = TypesCaptured.SnowGrab.ToString();
     }
 

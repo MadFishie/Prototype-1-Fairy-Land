@@ -18,7 +18,7 @@ public class FairyAI : MonoBehaviour
 
     [SerializeField][Range(0,100)] float Speed;
 
-
+    
     
 
     bool captured=false;
